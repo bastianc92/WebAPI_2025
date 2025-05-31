@@ -15,4 +15,3 @@ namespace WebApi_2025_jueves.DAL.Entities
     }
 }
  
-// Profe a mi el .NET 6 no me dejo instalar solo me dejaba instalar el 7 y 8 y me paso eso es porque yo para el visualStudiocode uso el .NET 8

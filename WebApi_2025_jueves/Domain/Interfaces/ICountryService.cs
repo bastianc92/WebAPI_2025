@@ -13,7 +13,6 @@
         Task<Country> EditCountryAsync(Country country);
 
         Task<Country> DeleteCountryAsync(Guid id);
-
-
+        Task CreateCountryAsync();
     }
 }
