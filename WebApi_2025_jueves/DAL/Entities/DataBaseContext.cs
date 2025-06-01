@@ -5,7 +5,7 @@ namespace WebApi_2025_jueves.DAL.Entities
     public class DataBaseContext : DbContext
     {
 
-      public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
+        public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
         {
 
         }
@@ -15,11 +15,14 @@ namespace WebApi_2025_jueves.DAL.Entities
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Country>().HasIndex(c => c.Name).IsUnique(); // indece del campo Name para la tabla Countries
-        }
+
+            modelBuilder.Entity<State>().HasIndex("Name", "CountryId").IsUnique();// Haciendo un indice compuesto 
 
         #region DbSets
 
         public DbSet<Country> Countries { get; set; }
+
+        public DbSet<State> States { get; set; }
 
         #endregion
     }

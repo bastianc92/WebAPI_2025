@@ -2,9 +2,9 @@
 
 namespace WebApi_2025_jueves.DAL.Entities
 {
-    public class Country : AuditBase
+    public class State : AuditBase
     {
-        [Display(Name = "Pais")] // Identifica el nombre mas facil
+        [Display(Name = "Estado/Departamento")] // Identifica el nombre mas facil
 
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres.")] // Longitud max
 
@@ -12,7 +12,11 @@ namespace WebApi_2025_jueves.DAL.Entities
 
         public string Name { get; set; }
 
-        [Display(Name = "Estados/Departamentos")]
-        public ICollection<State>? States { get; set; } 
+        // Asi relaciono dos tablas con EF core
+        [Display(Name = "Pais")]
+
+        //FK
+        [Display(Name = "Id pais")]
+        public Guid CountryId { get; set; } // Foreign Key
     }
 }

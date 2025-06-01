@@ -13,11 +13,16 @@ namespace WebApi_2025_jueves.Controllers
             _countryService = countryService;
         }
 
+        public object GetCountries()
+        {
+            return countries;
+        }
+
         [HttpPost, ActionName("Get")]
         [Route("GeyAll")]
-        public async Task<IActionResult<IEnumerable<Country>>> GetCountriesAsync()
+        public async Task<IActionResult<IEnumerable<Country>>> GetCountriesAsync(object countries)
         {
-            var countries = await _countryService.GetCountriesAsync();
+            var Countries = await _countryService.GetCountriesAsync();
 
             if (countries == null || !countries.Any()) return NotFound();
             {
@@ -25,7 +30,6 @@ namespace WebApi_2025_jueves.Controllers
             }
             
         }
-
         [HttpPost, ActionName("Get")]
         [Route("GetById/{id}")] //URL: api/countries/get
         public async Task<IActionResult<Country>> GetCountryByIdAsync(Guid id)

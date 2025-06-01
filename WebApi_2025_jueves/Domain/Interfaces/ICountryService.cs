@@ -14,5 +14,6 @@
 
         Task<Country> DeleteCountryAsync(Guid id);
         Task CreateCountryAsync();
+        Task GetCountryByIdAsync(Guid id);
     }
 }

@@ -40,3 +40,5 @@ namespace WebApi_2025_jueves.Migrations
         }
     }
 }
+//PROFE BUENAS NOCHES, Aqui en este archivo de Entity le di igual al video le di add-migration StateEntity y no me genero nada como
+//a ustes le sale en el video, al darle add-migration StateEntity me genera error y no crea el archivo completo.

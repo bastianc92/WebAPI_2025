@@ -33,7 +33,12 @@ namespace WebApi_2025_jueves.Domain.Services
                 throw new Exception(dbUpdateException.InnerException?.Message ??
                     dbUpdateException.Message);
             }
-        }   
+        }
+
+        public Task CreateCountryAsync()
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<Country> DeleteCountryAsync(Guid id)
         {
@@ -95,6 +100,11 @@ namespace WebApi_2025_jueves.Domain.Services
             }
         }
 
+        public Task<Country> GetCountryById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Country> GetCountryByIdAsync(Guid id)
         {
             try
@@ -103,6 +113,7 @@ namespace WebApi_2025_jueves.Domain.Services
                 // Otras formas de traer un objeto de la BD 
                 var country1 = await _context.Countries.FindAsync(id);
                 var country2 = await _context.Countries.FirstAsync(c => c.Id == id);
+
 
                 return country;
             }
